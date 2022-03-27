@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <link rel="stylesheet" href="{%static "css/bar.css"%}">
+  <link rel="stylesheet" href="{%static "css/common.css"%}">
+</head>
+<h1 align="center" >JOB REGISTRATION FORM </h1>
+
+<title>JOB REGISTRATION</title>
+<body align='center'>
+  <!-- <img src="{% static "images/seven.jpg" %}"> -->
+  <!-- <img src="{%static "/images/two.jpg"%}" -->
+  <!-- <a href="/customerapp/wish"> click here for wish them aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a> -->
+
+<div class="topnav">
+  <a class="active" href="/jobreg">Home</a>
+  <a href="/job_tableinfo">Information</a>
+  <!-- <a href="#contact">Edit</a>
+  <a href="#about">Delete</a> -->
+</div>
+
+<div style="padding-left:16px">
+
+  <p></p>
+</div>
+
+<center>
+  <h2>REGISTRATION FORM</h2>
+<form method='POST'>
+  {{form.as_p}}
+  {% csrf_token %}
+<!-- <input type="submit" value="register"> -->
+</br>
+<!-- <input type="submit" value="Edit" >
+<input type="submit" value="Delete"> -->
+</form>
+</center>
+  </body>
+</html>

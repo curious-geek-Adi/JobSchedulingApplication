@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <link rel="stylesheet" href="{%static "css/new.css"%}">
+  <link rel="stylesheet" href="{%static "css/bar.css"%}">
+
+</head>
+<h1 align="center" >CONTRACTOR DATABASE INFORMATION</h1>
+
+<title>CONTRACTOR DB</title>
+<body>
+  <!-- <img src="{% static "images/seven.jpg" %}"> -->
+  <!-- <img src="{%static "/images/two.jpg"%}" -->
+  <!-- <a href="/customerapp/wish"> click here for wish them aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a> -->
+
+<div class="topnav">
+  <a class="active" href="/contreg">Home</a>
+  <a href="/cont_tableinfo">Information</a>
+  <!-- <a href="#contact">Edit</a>
+  <a href="#about">Delete</a> -->
+</div>
+
+<div style="padding-left:16px">
+
+  <p></p>
+</div>
+
+<center>
+
+
+
+<h1>TABLE BASED VIEW</h1>
+<hr size="7" noshade>
+<title>CONTRACTOR INFORMATION</title>
+<body>
+
+{% if cont_list %}
+<table>
+  <thead>
+    <!-- <th>ID_No</th> -->
+    <th>Company-Id</th>
+    <th>Name</th>
+    <th>City</th>
+    <th>Zipcode</th>
+    <th><a>Update(Operation)</a></th>
+    <th><a>Delete(Operation)</a></th>
+    </thead>
+    {% for cont in cont_list %}
+        <tr>
+          <!-- <td> {{cont.id}}</td> -->
+         <td> {{cont.ccid}}</td>
+        <td> {{cont.name}}</td>
+        <td> {{cont.city}}</td>
+        <td> {{cont.zipcode}}</td>
+        <td><a href='/contupdate/{{cont.ccid}}/'>Update</a></td>
+        <td><a href='/contdelete/{{cont.ccid}}/'>Delete</a></td>
+      </tr>
+    {% endfor %}
+    </table>
+
+  {% endif %}
+</br>
+<!-- <input type="submit" value="Edit">
+<input type="submit" value="Delete"> -->
+  </body>
+</html>

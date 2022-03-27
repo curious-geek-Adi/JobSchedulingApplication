@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <link rel="stylesheet" href="{%static "css/bar.css"%}">
+  <link rel="stylesheet" href="{%static "css/common.css"%}">
+</head>
+<h1 align="center" >CONTRACTOR REGISTRATION FORM</h1>
+
+<title>CONTRACTOR </title>
+<body>
+  <!-- <img src="{% static "images/seven.jpg" %}"> -->
+  <!-- <img src="{%static "/images/two.jpg"%}" -->
+  <!-- <a href="/customerapp/wish"> click here for wish them aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a> -->
+
+<div class="topnav">
+  <a class="active" href="/contreg">Home</a>
+  <a href="/cont_tableinfo">Information</a>
+  <!-- <a href="#contact">Edit</a>
+  <a href="#about">Delete</a> -->
+</div>
+
+<div style="padding-left:16px">
+
+  <p></p>
+</div>
+
+<center>
+  <h2>REGISTRATION FORM</h2>
+  <hr size="7" noshade>
+  <form method='POST'>
+    {{form.as_p}}
+    {% csrf_token %}
+  <!-- <input type="submit" value="register"> -->
+  <button class="button button1">Register</button>
+</br>
+<!-- <input type="submit" value="Edit"> <input type="submit" value="Delete"> -->
+  </form>
+</center>
+  </body>
+</html>

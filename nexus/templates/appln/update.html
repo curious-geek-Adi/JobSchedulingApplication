@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <link rel="stylesheet" href="{%static "css/bar.css"%}">
+</head>
+<h1 align="center" >
+  COMAPNY REGISTRATION  UPDATE FORM </h1>
+
+      <title>
+        COMPANY
+            </title>
+<body>
+  <!-- <img src="{% static "images/seven.jpg" %}"> -->
+  <!-- <img src="{%static "/images/two.jpg"%}" -->
+  <!-- <a href="/customerapp/wish"> click here for wish them aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a> -->
+
+<div class="topnav">
+  <a class="active" href="/compreg">Home</a>
+  <a href="/comp_tableinfo">Information</a>
+  <!-- <a href="#contact">Edit</a>
+  <a href="#about">Delete</a> -->
+</div>
+
+<div style="padding-left:16px">
+
+  <p></p>
+</div>
+
+<center>
+  <h2>UPDATING REGISTRATION DATA FORM</h2>
+<form method='POST'>
+  <!-- <form method="POST" action='/createjob/'> -->
+        <table align="center">
+            <tr>
+    <td>Company_ID:</td><td><input type='number' name='id' disabled value={{comp.cid}}></td></tr>
+    <tr><td>CompanyName:</td><td><input type='text' name='name' value={{comp.name}}></td></tr>
+    <tr><td>City:</td><td><input type='text' name='city' value={{comp.city}}></td></tr>
+    <tr><td>Zipcode:</td><td><input type='number' name='zipcode' value={{comp.zipcode}}></td></tr>
+    </table>
+
+  {% csrf_token %}
+<input type="submit" value="UPDATE">
+
+<!-- <input type="submit" value="Edit" >
+<input type="submit" value="Delete"> -->
+</form>
+</center>
+  </body>
+</html>

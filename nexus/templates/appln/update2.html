@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <link rel="stylesheet" href="{%static "css/bar.css"%}">
+</head>
+<h1 align="center" >
+  COMAPNY REGISTRATION  UPDATE FORM </h1>
+
+      <title>
+        COMPANY
+            </title>
+<body>
+  <!-- <img src="{% static "images/seven.jpg" %}"> -->
+  <!-- <img src="{%static "/images/two.jpg"%}" -->
+  <!-- <a href="/customerapp/wish"> click here for wish them aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a> -->
+
+<div class="topnav">
+  <a class="active" href="/jobreg">Home</a>
+  <a href="/job_tableinfo">Information</a>
+  <!-- <a href="#contact">Edit</a>
+  <a href="#about">Delete</a> -->
+</div>
+
+<div style="padding-left:16px">
+
+  <p></p>
+</div>
+
+<center>
+  <h2>UPDATING REGISTRATION DATA FORM</h2>
+<form method='POST'>
+  <!-- <form method="POST" action='/createjob/'> -->
+        <!-- <table align="center">
+            <tr>
+    <td>Company_ID:</td><td><input type='number' name='id' disabled value={{cont.ccid}}></td></tr>
+    <tr><td>Contractor Name:</td><td><input type='text' name='name' value={{cont.name}}></td></tr>
+    <tr><td>City:</td><td><input type='text' name='city' value={{cont.city}}></td></tr>
+    <tr><td>Zipcode:</td><td><input type='number' name='zipcode' value={{cont.zipcode}}></td></tr>
+    </table> -->
+    <form method="POST">
+        {% csrf_token %}
+        <!-- <table align="center"> -->
+            <!-- <tr> -->
+        <!-- <td></td><td> -->
+          ID:<input type='number' name='id' disabled value={{jo.job_id}}> <br></br>
+        <!-- </td></tr> -->
+    <!-- <tr><td> -->
+      <!-- TITLE: -->
+    <!-- </td><td> -->
+      TITLE:  <input type='text' name='title' value={{jo.title}}> <br></br>
+    <!-- </td></tr> -->
+    <!-- <tr><td> -->
+
+    <!-- </td><td> -->
+        PRICE:<input type='number' name='price' value={{jo.price}}> <br></br>
+      <!-- </td></tr> -->
+    <!-- <tr><td> -->
+      <label for='company'>Choose a company:</label>
+    <!-- </td><td> -->
+        <select name='company' id="company" > <br></br>
+            {% for x in c1 %}
+          <br></br>  <option value={{x.name}}>{{x.name}}</option>
+            {% endfor %}
+
+        </select>
+        <br></br>
+    <!-- </td></tr> -->
+        <!-- <tr><td> -->
+          <label for='contractor'>Choose a contractor:</label>
+        <!-- </td><td> -->
+        <select name='contractor' id='contractor'>
+            {% for x in c2 %}
+            <option value={{x.name}}>{{x.name}}</option>
+            {% endfor %}
+
+        </select
+        <br></br>
+    <!-- </td></tr> -->
+<!-- <tr><td> -->
+  <!-- </td><td> -->
+    DATE:<input type='date' name='date' value={{jo.Date_job}}> <br></br>
+  <!-- </td></tr> -->
+<!-- <tr><td> -->
+  <!-- </td><td> -->
+    TIME:<input type='time' name='time' value={{jo.time_job}}> <br></br>
+  <!-- </td></tr> -->
+    <!-- </table> -->
+    <br></br>
+        <input type='submit' value='UPDATE'>
+</form>
+
+
+  {% csrf_token %}
+<!-- <input type="submit" value="UPDATE"> -->
+
+<!-- <input type="submit" value="Edit" >
+<input type="submit" value="Delete"> -->
+</form>
+</center>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <link rel="stylesheet" href="{%static "css/new.css"%}">
+  <link rel="stylesheet" href="{%static "css/bar.css"%}">
+</head>
+<h1 align="center" >JOB PORTAL DATABASE INFORMATION</h1>
+
+<title>JOBPORTAL DB</title>
+<body>
+  <!-- <img src="{% static "images/seven.jpg" %}"> -->
+  <!-- <img src="{%static "/images/two.jpg"%}" -->
+  <!-- <a href="/customerapp/wish"> click here for wish them aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a> -->
+
+<div class="topnav">
+  <a class="active" href="/jobreg">Home</a>
+  <a href="/job_tableinfo">Information</a>
+  <!-- <a href="#contact">Edit</a>
+  <a href="#about">Delete</a> -->
+</div>
+
+<div style="padding-left:16px">
+
+  <p></p>
+</div>
+
+<center>
+<h1>TABLE BASED VIEW</h1>
+<hr size="7" noshade>
+<title>COMPANY Info</title>
+<body>
+  <!-- <h2> your are sucessfully registered</h2> -->
+{% if job_list %}
+<table>
+  <thead>
+    <!-- <th>ID_No</th> -->
+    <th>job-Id</th>
+    <th>job_title</th>
+    <th>price</th>
+    <th>company</th>
+    <th>contractor</th>
+    <th>Date</th>
+    <th>time</th>
+    <th>Update</th>
+    <th>Delete</th>
+    </thead>
+    {% for job in job_list %}
+        <tr>
+          <!-- <td> {{comp.id}}</td> -->
+         <td> {{job.job_id}}</td>
+        <td> {{job.title}}</td>
+        <td> {{job.price}}</td>
+        <td> {{job.company}}</td>
+        <td> {{job.contractor}}</td>
+        <td> {{job.Date_job}}</td>
+        <td> {{job.time_job}}</td>
+        <td><a href='/jobupdate/{{job.job_id}}/'>Update</a></td>
+        <td><a href='/jobdelete/{{job.job_id}}/'>Delete</a></td>
+        <td>
+      </tr>
+    {% endfor %}
+    </table>
+
+  {% endif %}
+</br>
+<!-- <input type="submit" value="Edit">
+<input type="submit" value="Delete"> -->
+  </body>
+</html>
